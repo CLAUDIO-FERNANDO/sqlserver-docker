@@ -1,0 +1,22 @@
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "Senha@123"
+    ports:
+      - "1433:1433"
+    volumes:
+      - mssql-data:/var/opt/mssql
+
+volumes:
+  mssql-data:
+
+
+
+#  AGORA NO TERMINAL: 
+#  execute o comando:
+#  compose up -d ou docker-compose up -d
+#  Isso iniciará todos os serviços definidos no arquivo.
+  
